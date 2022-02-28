@@ -1,0 +1,31 @@
+{
+  "name": "junit-live-spec",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Generate live spec from feature files & JUnit test results",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thlcodes/junit-live-spec.git"
+  },
+  "keywords": [
+    "junit",
+    "cucumber",
+    "feature",
+    "live",
+    "spec"
+  ],
+  "author": "Thomas Liebeskind <thomas.liebeskind@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thlcodes/junit-live-spec/issues"
+  },
+  "homepage": "https://github.com/thlcodes/junit-live-spec#readme",
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "command-line-args": "^5.2.1"
+  }
+}

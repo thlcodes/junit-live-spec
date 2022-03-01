@@ -46,7 +46,7 @@ function asyncGlob(pattern: string): Promise<string[]> {
 /* istanbul ignore next */
 // async. load features from either glob or list of files.
 export async function loadFeatures(globOrList: string | string[]): Promise<ParsedFeature[]> {
-  let list: string[] =
+  const list: string[] =
     typeof globOrList === 'string' ? await asyncGlob(globOrList) : (globOrList as string[]);
 
   return Promise.all(

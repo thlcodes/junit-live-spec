@@ -16,7 +16,7 @@ const statusColors = {
  * Format live spec as (colored) console output
  */
 export const formatter: Formatter = (spec: LiveSpec) => {
-  let buf = spec.features
+  const buf = spec.features
     .map((feature) => {
       return (
         statusColors[feature.status].underline.bold('Feature: ' + feature.title) +

@@ -36,24 +36,23 @@ interface Export {
   formatter: Formatter;
 }
 
-function validateArgs(): {
+type ValidatedArgs = {
   mode: 'print' | 'export';
   format?: string;
   junit: string;
   exports?: Export[];
   features: string[];
-} {
-  const {
-    features,
-    junit,
-    format,
-    export: _exports
-  }: {
-    features: string[];
-    junit: string;
-    format: string;
-    export: string[];
-  } = parseArgs(argDefinitions) as any;
+};
+
+type RawArgs = {
+  features: string[];
+  junit: string;
+  format: string;
+  export: string[];
+};
+
+function validateArgs(): ValidatedArgs {
+  const { features, junit, format, export: _exports } = parseArgs(argDefinitions) as RawArgs;
 
   if ((features || []).length == 0) {
     throw new Error('hm, no features to process');
@@ -105,7 +104,7 @@ function validateArgs(): {
 }
 
 function usage() {
-  console.log(`TODO: usage`);
+  console.log('TODO: usage');
 }
 
 async function main() {

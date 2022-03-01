@@ -11,9 +11,10 @@
   },
   "plugins": ["@typescript-eslint"],
   "rules": {
-    "indent": ["warning", 2],
+    "indent": ["warn", 2, { "SwitchCase": 1 }],
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
-    "semi": ["error", "always"]
+    "semi": ["error", "always"],
+    "@typescript-eslint/no-non-null-assertion": ["off"]
   }
 }

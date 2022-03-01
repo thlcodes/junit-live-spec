@@ -14,7 +14,7 @@ const statusSymbols = {
  * Format live spec as simple markdown
  */
 export const formatter: Formatter = (spec: LiveSpec) => {
-  let buf = spec.features
+  const buf = spec.features
     .map((feature) => {
       return (
         '# ' +

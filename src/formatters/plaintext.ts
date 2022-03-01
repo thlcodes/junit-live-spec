@@ -6,7 +6,7 @@ import { formatTable } from './_util';
  * Format live spec as plain text
  */
 export const formatter: Formatter = (spec: LiveSpec) => {
-  let buf = spec.features
+  const buf = spec.features
     .map((feature) => {
       return (
         '[' +

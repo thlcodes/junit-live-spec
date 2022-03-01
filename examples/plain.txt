@@ -1,0 +1,37 @@
+[SUCCESS] Feature: Complex
+
+	[SUCCESS] Scenario: Scenario one
+		Given this background
+		Given this scenario
+		When a table
+			| B  | C  |
+			| 1  | 2  |
+			| -1 | -2 |
+		Then expect text
+			"""
+			some text
+			"""
+	
+	[SKIPPED] Scenario: Skipped Scenario two
+		Given this background
+		Given no steps
+	
+	[FAILURE] Scenario: Scenario outline 1
+		Given this background
+		Given given 1
+		When when
+		And and 1 2
+		Then then 2
+	
+	[ERROR] Scenario: Scenario outline 3
+		Given this background
+		Given given 3
+		When when
+		And and 3 4
+		Then then 4
+
+[SUCCESS] Feature: Simple
+
+	[SUCCESS] Scenario: Simple scenario
+		Given this scenarion
+		Then all is well

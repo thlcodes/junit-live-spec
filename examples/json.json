@@ -1,0 +1,159 @@
+{
+  "timestamp": "2022-03-01T13:01:24.290Z",
+  "features": [
+    {
+      "title": "Complex",
+      "tags": [
+        "@feature_tag"
+      ],
+      "timestamp": "2022-03-01T08:00:00",
+      "status": "success",
+      "scenarios": [
+        {
+          "title": "Scenario one",
+          "tags": [
+            "@feature_tag",
+            "@scenario_tag"
+          ],
+          "status": "success",
+          "steps": [
+            {
+              "keyword": "Given",
+              "text": "this background"
+            },
+            {
+              "keyword": "Given",
+              "text": "this scenario"
+            },
+            {
+              "keyword": "When",
+              "text": "a table",
+              "table": {
+                "header": [
+                  "B",
+                  "C"
+                ],
+                "rows": [
+                  [
+                    "1",
+                    "2"
+                  ],
+                  [
+                    "-1",
+                    "-2"
+                  ]
+                ]
+              }
+            },
+            {
+              "keyword": "Then",
+              "text": "expect text",
+              "docstring": {
+                "content": "some text"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Skipped Scenario two",
+          "tags": [
+            "@feature_tag",
+            "@skipped"
+          ],
+          "status": "skipped",
+          "steps": [
+            {
+              "keyword": "Given",
+              "text": "this background"
+            },
+            {
+              "keyword": "Given",
+              "text": "no steps"
+            }
+          ]
+        },
+        {
+          "title": "Scenario outline 1",
+          "tags": [
+            "@feature_tag"
+          ],
+          "status": "failure",
+          "steps": [
+            {
+              "keyword": "Given",
+              "text": "this background"
+            },
+            {
+              "keyword": "Given",
+              "text": "given 1"
+            },
+            {
+              "keyword": "When",
+              "text": "when"
+            },
+            {
+              "keyword": "And",
+              "text": "and 1 2"
+            },
+            {
+              "keyword": "Then",
+              "text": "then 2"
+            }
+          ]
+        },
+        {
+          "title": "Scenario outline 3",
+          "tags": [
+            "@feature_tag"
+          ],
+          "status": "error",
+          "steps": [
+            {
+              "keyword": "Given",
+              "text": "this background"
+            },
+            {
+              "keyword": "Given",
+              "text": "given 3"
+            },
+            {
+              "keyword": "When",
+              "text": "when"
+            },
+            {
+              "keyword": "And",
+              "text": "and 3 4"
+            },
+            {
+              "keyword": "Then",
+              "text": "then 4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Simple",
+      "tags": [],
+      "timestamp": "2022-03-01T08:10:00",
+      "status": "success",
+      "scenarios": [
+        {
+          "title": "Simple scenario",
+          "tags": [],
+          "status": "success",
+          "steps": [
+            {
+              "keyword": "Given",
+              "text": "this scenarion"
+            },
+            {
+              "keyword": "Then",
+              "text": "all is well"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

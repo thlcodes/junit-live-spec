@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Complex" errors="0" failures="0" skipped="0" tests="3" timestamp="2022-03-01T08:00:00">
+    <testcase name="Complex Scenario one">
+    </testcase>
+    <testcase name="Complex Skipped Scenario two">
+      <skipped/>
+    </testcase>
+    <testcase name="Complex Scenario outline 1">
+      <failure message="failure message" />
+    </testcase>
+    <testcase name="Complex Scenario outline 3">
+      <error message="error message" />
+    </testcase>
+  </testsuite>
+  <testsuite name="Simple" tests="1" timestamp="2022-03-01T08:10:00">
+    <testcase name="Simple Simple scenario">
+    </testcase>
+  </testsuite>
+</testsuites>

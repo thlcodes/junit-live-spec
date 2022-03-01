@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thlcodes/junit-live-spec.git"
+    "url": "git+https://github.com/thlcodes/node-live-spec.git"
   },
   "keywords": [
     "junit",
@@ -23,9 +23,9 @@
   "author": "Thomas Liebeskind <thomas.liebeskind@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/thlcodes/junit-live-spec/issues"
+    "url": "https://github.com/thlcodes/node-live-spec/issues"
   },
-  "homepage": "https://github.com/thlcodes/junit-live-spec#README.md",
+  "homepage": "https://github.com/thlcodes/node-live-spec#README.md",
   "dependencies": {
     "@cucumber/gherkin-streams": "^4.0.0",
     "@cucumber/messages": "^17.1.1",

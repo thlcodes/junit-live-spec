@@ -2,7 +2,7 @@
   "name": "junit-live-spec",
   "version": "0.0.1",
   "description": "[WIP] Generate live spec from feature files & JUnit test results",
-  "main": "dist/index.js",
+  "bin": "cli.js",
   "scripts": {
     "test": "jest --color",
     "build": "tsc",

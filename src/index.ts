@@ -1,5 +1,7 @@
 import { build } from './builder';
 
+import { VERSION } from './version';
+
 import {
   jsonFormatter,
   plaintextFormatter,
@@ -19,7 +21,8 @@ const argDefinitions: OptionDefinition[] = [
   { name: 'features', type: String, multiple: true, defaultOption: true },
   { name: 'junit', alias: 'j', type: String, defaultValue: 'junit.xml' },
   { name: 'format', alias: 'f', type: String, defaultValue: 'console' },
-  { name: 'export', alias: 'x', type: String, multiple: true }
+  { name: 'export', alias: 'x', type: String, multiple: true },
+  { name: 'version', alias: 'v', type: Boolean }
 ];
 
 const formatters: Record<string, Formatter> = {
@@ -49,10 +52,22 @@ type RawArgs = {
   junit: string;
   format: string;
   export: string[];
+  version: boolean;
 };
 
 function validateArgs(): ValidatedArgs {
-  const { features, junit, format, export: _exports } = parseArgs(argDefinitions) as RawArgs;
+  const {
+    features,
+    junit,
+    format,
+    export: _exports,
+    version: showVersion
+  } = parseArgs(argDefinitions) as RawArgs;
+
+  if (showVersion) {
+    version();
+    process.exit(0);
+  }
 
   if ((features || []).length == 0) {
     throw new Error('hm, no features to process');
@@ -101,6 +116,10 @@ function validateArgs(): ValidatedArgs {
     exports,
     features
   };
+}
+
+function version() {
+  console.log(`v${VERSION}`);
 }
 
 function usage() {

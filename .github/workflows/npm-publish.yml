@@ -19,6 +19,11 @@ jobs:
       - run: npm run lint
       - run: npm test
       - run: npm run build
+      - env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            email=thomas.liebeskind@gmail.com
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
       - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

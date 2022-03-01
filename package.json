@@ -1,6 +1,6 @@
 {
   "name": "junit-live-spec",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "[WIP] Generate live spec from feature files & JUnit test results",
   "bin": "cli.js",
   "scripts": {

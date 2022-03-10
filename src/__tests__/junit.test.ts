@@ -10,6 +10,8 @@ describe('junit', () => {
 
 const VALID_JUNIT_XML = `<?xml version="1.0" encoding="UTF-8"?>
 <testsuites name="my testsuites">
+  <testsuite name="empty testsuire" errors="0" failures="0" skipped="0" tests="0" timestamp="2022-03-01T08:00:00">
+  </testsuite>
   <testsuite name="my first testsuite" errors="1" failures="1" skipped="1" tests="4" timestamp="2022-03-01T08:00:00">
     <testcase name="my ok testcase">
     </testcase>

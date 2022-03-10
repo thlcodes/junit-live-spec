@@ -54,7 +54,7 @@ function testcaseDetails(from: ErrorOrFailure): string | undefined {
 export async function parseJunitXml(xml: string): Promise<Testsuite[]> {
   const { testsuites } = await parseXml(xml);
   return (testsuites?.testsuite || []).map(
-    ({ $: { name, timestamp, failures, errors }, testcase: testcases }: JUnitTestsuite) => ({
+    ({ $: { name, timestamp, failures, errors }, testcase: testcases }: JUnitTestsuite) => ((testcases == null || testcases.length == 0) ? null : {
       name,
       timestamp,
       status: Number.parseInt(failures) + Number.parseInt(errors) > 0 ? 'failure' : 'success',
@@ -65,7 +65,7 @@ export async function parseJunitXml(xml: string): Promise<Testsuite[]> {
         details: testcaseDetails((error || [])[0] || (failure || [])[0])
       }))
     })
-  );
+  ).filter((ts: unknown) => ts != null);
 }
 
 // loads a XML file and parses its contents into a list of testsuites
